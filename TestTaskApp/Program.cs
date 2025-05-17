@@ -6,13 +6,20 @@ namespace TestTaskApp
     {
         static void Main(string[] args)
         {
-            //int[] arr = { int.MaxValue, int.MaxValue };
-            //int[] arr = null;
-            int[] arr = { int.MinValue };
-            //int[] arr = { 2, 3, -9, 7, 19};
-            //int[] arr = Array.Empty<int>();
-            Console.WriteLine(Calculator.SumTwoMin(arr));
-            Console.WriteLine();
+            int countOfElements;
+            Console.Write("Введите кол-во элементов массива: ");
+            countOfElements = int.Parse(Console.ReadLine());
+
+            int[] numbers = new int[countOfElements];
+
+            for (int i = 0; i < countOfElements; i++)
+            {
+                Console.Write($"Введите {i + 1}-й элемент: ");
+                numbers[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine($"Сумма двух минимальных элементов массива равна: " +
+                $"{Calculator.SumTwoMin(numbers)}");
         }
     }
 }
